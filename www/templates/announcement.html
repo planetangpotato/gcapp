@@ -1,0 +1,41 @@
+<ion view-title="CCS">
+  <div class="bar bar-header" style="background-color:	#f69011;">
+    <a href="#/tab/home " class="button icon ion-arrow-left-c"></a>
+    <h1 class="title" style="color:white;">Announcement</h1>
+    <a href="#/addannouncement" class="button icon ion-plus"></a>
+  </div>
+   <ion-content class="padding" style="text-align: center;">
+
+    <ion-list>
+      <br><br>
+
+      <div class="padding">
+        <div class="list card"  ng-repeat="a in announcementlist track by $index" style="margin:10px; padding:10px; box-shadow: 10px 10px 5px #E0E0E0; border-radius:5px;">
+             <div style="margin:10px; padding:10px; box-shadow: 0px 0px 0px #E0E0E0; border-radius:5px" >
+               <div class="item item-avatar">
+                 <img src="img/ccs.png">
+                 <b style="text-allign:center;">Gordon College CCS</b></div>
+                 <div  style="background-color:#f09811; height:3px;"></div>
+                  <div>
+                    <br><h5>{{a.announcementname}}</h5>
+                    <h5>{{a.announcementdescription}}</h5>
+                  </div>
+                </div>
+        </div>
+             <div class="row">
+               <div class="col">
+                 <!-- <button class="button button-clear icon ion-edit" style="color:	#f69011;"></button> -->
+                    <button ng-click="edits(a.announcementid,a.announcementname,a.announcementdescription)" class="button button-clear icon ion-edit" style="color:	#f69011;"></button>
+               </div>
+               <div class="col"></div>
+               <div class="col"></div>
+               <div class="col"></div>
+               <div class="col"><button ng-click="deletecom(a.announcementid)" class="button button-clear icon ion-trash-b" style=	"color:#f69011;"></button>
+              </div>
+             </div>
+             </div>
+
+    </ion-list>
+
+  </ion-content>
+</ion-view>
