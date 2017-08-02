@@ -27,7 +27,7 @@ angular.module('starter.controllers', [])
 
         $http.defaults.headers.post['Content-Type'] = 'applicaation/x-www-form-urlencoded; charset=UTF-8';
         $http({
-            url: 'http://'+localStorage.getItem('server')+'/gcapp1/admin/www/php/login.php',
+            url: 'https://renzo-baranda.000webhostapp.com/login.php',
             method: "POST",
             data:{
                 'username' : username,
@@ -102,7 +102,7 @@ angular.module('starter.controllers', [])
       var name = document.getElementById('name').value;
       console.log(name);
       $http({
-        url:"http://"+localStorage.getItem('server')+"/gcapp1/admin/www/php/add.php",
+        url:"https://renzo-baranda.000webhostapp.com/add.php",
         method:"POST",
         data:{
           'add':name,
@@ -141,7 +141,7 @@ angular.module('starter.controllers', [])
         $scope.editlabel = "Please complete the form";
       }else{
         $http({
-          url:"http://"+localStorage.getItem('server')+"/gcapp1/admin/www/php/edit.php",
+          url:"https://renzo-baranda.000webhostapp.com/edit.php",
           method:"POST",
           data:{
             'add':name,
@@ -175,7 +175,7 @@ angular.module('starter.controllers', [])
   });
 
     $http({
-      url:"http://"+localStorage.getItem('server')+"/gcapp1/admin/www/php/getdata.php",
+      url:"https://renzo-baranda.000webhostapp.com/getdata.php",
       method:"GET"
     })
 
@@ -205,10 +205,10 @@ $scope.speak = function(name,desc){
 
 //delete
   $scope.deletecom = function (a){
-    $http.get('http://'+localStorage.getItem('server')+'/gcapp1/admin/www/php/delete.php?id='+a).then(function(a){
+    $http.get('https://renzo-baranda.000webhostapp.com/delete.php?id='+a).then(function(a){
       console.log(a);
       $http({
-        url:"http://"+localStorage.getItem('server')+"/gcapp1/admin/www/php/getdata.php",
+        url:"https://renzo-baranda.000webhostapp.com/getdata.php",
         method:"GET"
       })
 
